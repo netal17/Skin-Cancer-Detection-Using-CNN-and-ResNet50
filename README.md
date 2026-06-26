@@ -1,47 +1,325 @@
+# 🩺 Skin Cancer Detection Using CNN and ResNet50
 
-# Skin Cancer Detection Using CNN and ResNet50
+A Deep Learning-based skin cancer classification system that detects **Benign** and **Malignant** skin lesions using **Convolutional Neural Networks (CNN)** and **ResNet50**. This project demonstrates an end-to-end computer vision pipeline including image preprocessing, model training, evaluation, and prediction.
 
-A deep learning project for classifying skin lesions as **Benign** or **Malignant** using Convolutional Neural Networks (CNN) and ResNet50.
+---
 
-## Features
-- Image preprocessing
-- CNN baseline model
-- ResNet50 transfer learning model
-- Training, validation and testing pipeline
-- Model saving and inference script
+## 📌 Overview
 
-## Dataset
-ISIC Skin Cancer Dataset (224x224 RGB images).
+Skin cancer is one of the most common forms of cancer worldwide. Early diagnosis significantly improves treatment outcomes. This project uses deep learning techniques to automatically classify dermoscopic skin lesion images into two categories:
 
-## Tech Stack
-Python, TensorFlow, Keras, NumPy, OpenCV, Scikit-learn, Matplotlib.
+- ✅ Benign
+- ✅ Malignant
 
-## Folder Structure
+The project compares a custom CNN architecture with a ResNet50-based transfer learning model to evaluate classification performance.
+
+---
+
+# 🚀 Features
+
+- Binary Skin Cancer Classification
+- Image Preprocessing
+- CNN Model Implementation
+- ResNet50 Transfer Learning
+- Training & Validation Pipeline
+- Model Evaluation
+- Prediction on New Images
+- Model Saving & Loading
+- Performance Visualization
+
+---
+
+# 🛠 Tech Stack
+
+- Python
+- TensorFlow
+- Keras
+- OpenCV
+- NumPy
+- Pandas
+- Matplotlib
+- Scikit-learn
+- Pillow
+
+---
+
+# 📂 Dataset
+
+This project uses the **ISIC (International Skin Imaging Collaboration)** Skin Cancer Dataset.
+
+### Kaggle Dataset
+
+https://www.kaggle.com/datasets/fanconic/skin-cancer-malignant-vs-benign
+
+### Official ISIC Website
+
+https://www.isic-archive.com/
+
+---
+
+## Dataset Structure
+
+After downloading the dataset, organize it as follows:
+
+```text
+dataset/
+│
+├── train/
+│   ├── benign/
+│   └── malignant/
+│
+└── test/
+    ├── benign/
+    └── malignant/
 ```
+
+All images should be resized to:
+
+```
+224 × 224 RGB
+```
+
+---
+
+# 📥 Dataset Download
+
+The dataset is **not included** in this repository because of GitHub file size limitations.
+
+Download it from Kaggle and place it inside the project folder:
+
+```text
 Skin-Cancer-Detection-Using-CNN-and-ResNet50/
-│── train.py
-│── predict.py
-│── requirements.txt
-│── README.md
-│── dataset/
+│
+├── dataset/
 │   ├── train/
 │   └── test/
+│
+├── train.py
+├── predict.py
+├── requirements.txt
+├── README.md
+└── LICENSE
 ```
 
-## Run
+---
+
+# 📁 Project Structure
+
+```text
+Skin-Cancer-Detection-Using-CNN-and-ResNet50/
+│
+├── train.py
+├── predict.py
+├── requirements.txt
+├── README.md
+├── LICENSE
+│
+├── dataset/
+│   ├── train/
+│   └── test/
+│
+├── models/
+│
+└── screenshots/
+```
+
+---
+
+# 🔄 Workflow
+
+```
+Skin Images
+      │
+      ▼
+Image Loading
+      │
+      ▼
+Image Preprocessing
+      │
+      ▼
+Normalization
+      │
+      ▼
+CNN / ResNet50
+      │
+      ▼
+Training
+      │
+      ▼
+Validation
+      │
+      ▼
+Prediction
+      │
+      ▼
+Benign / Malignant
+```
+
+---
+
+# 🧠 Model Architecture
+
+### CNN Model
+
+- Conv2D
+- MaxPooling2D
+- Dropout
+- Conv2D
+- MaxPooling2D
+- Flatten
+- Dense
+- Softmax Output Layer
+
+### ResNet50 Model
+
+- Pretrained ResNet50 Backbone
+- Transfer Learning
+- Global Average Pooling
+- Dense Output Layer
+- Softmax Classifier
+
+---
+
+# 📊 Results
+
+The project compares two different Deep Learning approaches.
+
+| Model | Accuracy |
+|--------|----------|
+| CNN | ~69.85% |
+| ResNet50 | ~82% |
+
+The ResNet50 model achieved significantly better performance due to transfer learning and deeper feature extraction.
+
+---
+
+# ▶️ Installation
+
+Clone the repository
+
+```bash
+git clone https://github.com/netal17/Skin-Cancer-Detection-Using-CNN-and-ResNet50.git
+```
+
+Move into the project
+
+```bash
+cd Skin-Cancer-Detection-Using-CNN-and-ResNet50
+```
+
+Install dependencies
 
 ```bash
 pip install -r requirements.txt
+```
+
+---
+
+# 🚀 Training
+
+```bash
 python train.py
+```
+
+---
+
+# 🔍 Prediction
+
+```bash
 python predict.py sample.jpg
 ```
 
-## Results
-The original academic project compared a custom CNN with ResNet50, where the report observed approximately **69.85%** CNN accuracy and **82%** ResNet50 accuracy on the evaluated dataset.
+Example Output
 
-## Future Improvements
+```
+Prediction : Malignant
+
+Confidence : 98.12%
+```
+
+---
+
+# 📈 Future Improvements
+
 - EfficientNet
-- Vision Transformers
-- Explainable AI (Grad-CAM)
-- FastAPI deployment
-- Docker support
+- Vision Transformers (ViT)
+- Grad-CAM Visualization
+- Explainable AI
+- Hyperparameter Optimization
+- Data Augmentation
+- Docker Deployment
+- FastAPI REST API
+- Streamlit Web Application
+
+---
+
+# 💡 Skills Demonstrated
+
+- Computer Vision
+- Deep Learning
+- CNN
+- ResNet50
+- Transfer Learning
+- Image Classification
+- TensorFlow
+- Keras
+- Python
+- Model Training
+- Model Evaluation
+- Medical Image Analysis
+
+---
+
+# 📷 Screenshots
+
+### Dataset Samples
+
+_Add screenshot here_
+
+---
+
+### CNN Training
+
+_Add screenshot here_
+
+---
+
+### ResNet50 Training
+
+_Add screenshot here_
+
+---
+
+### Prediction Output
+
+_Add screenshot here_
+
+---
+
+# 📚 References
+
+- ISIC Archive – https://www.isic-archive.com/
+- Kaggle Skin Cancer Dataset – https://www.kaggle.com/datasets/fanconic/skin-cancer-malignant-vs-benign
+- TensorFlow Documentation – https://www.tensorflow.org/
+- Keras Documentation – https://keras.io/
+
+---
+
+# 📜 License
+
+This project is intended for educational and portfolio purposes.
+
+---
+
+# 👨‍💻 Author
+
+**Netal Daga**
+
+AI / Machine Learning Engineer
+
+- GitHub: https://github.com/netal17
+- LinkedIn: https://www.linkedin.com/in/netaldaga
+
+---
+
+⭐ If you found this project useful, consider giving it a star!
